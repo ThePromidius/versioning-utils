@@ -3,7 +3,7 @@ from pathlib import Path
 from packaging.version import parse
 
 
-from versioning_utils.utils.version import bump_version, parse_version, get_version_file_path
+from promidius_versioning_utils.utils.version import bump_version, parse_version, get_version_file_path
 
 
 class TestVersionBump(unittest.TestCase):
