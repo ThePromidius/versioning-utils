@@ -12,17 +12,28 @@ def bump_packages_if_modified(src_folder, packages: list[str], bump_level: SUPPO
 
     for package in packages:
         print(f"Checking and bumping {package}")
+
+        # Check if the package has been modified
         if latest_commit_hash := has_code_changed(src_folder, package, version_metadata):
+            print(f"Changes detected in package '{package}'.")
+
+            # Parse current version
             version_file_path = get_version_file_path(src_folder, package)
             version = parse_version(version_file_path)
             print(f"Current version: {version}")
+
+            # Bump version
             bumped_version = bump_version(version, bump_level)
+            print("Bumping...")
             print(f"Bumped version: {bumped_version}")
+
+            # Save bumped version metadata
             version_metadata[package] = {
                 "version": str(bumped_version),
                 "commit_hash": latest_commit_hash
             }
-            print("Bumping version...")
+
+            # Save bumped version into the __version__.py file
             save_bump(version_file_path, bumped_version)
             print(f"Version successfully bumped to {bumped_version} for package {package}")
         else:

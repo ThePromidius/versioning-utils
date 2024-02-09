@@ -4,7 +4,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Promidius_VersionUtils"
+name = "promidius-versioning-utils"
 description = "A simple versioning utility for Python projects."
 version = "0.0.1"
 authors = [
@@ -25,6 +25,6 @@ Homepage = "https://github.com/ThePromidius/versioning-utils"
 Issues = "https://github.com/ThePromidius/versioning-utils/issues"
 
 [tool.setuptools.packages]
-[tool.setuptools.find]
+[tool.setuptools.packages.find]
 where = ["src"]
 include = ["versioning_utils"]
