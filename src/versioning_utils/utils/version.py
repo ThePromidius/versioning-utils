@@ -78,11 +78,11 @@ def parse_version(version_file_path) -> Version:
                     # Validate the version using the packaging library
                     return parse(raw_version)
                 except InvalidVersion:
-                    print(f"Warning: Invalid version '{raw_version}'.")
+                    print(f"Warning: Invalid version '{raw_version}")
             else:
-                raise ValueError("No version found in'.")
+                raise ValueError(f"No version found at {version_file_path}")
     except FileNotFoundError:
-        raise FileNotFoundError("Version file not found for'.")
+        raise FileNotFoundError(f"Version file not found at {version_file_path}")
 
 
 def get_version_file_path(source_folder, package_name):
