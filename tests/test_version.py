@@ -3,7 +3,7 @@ from pathlib import Path
 from packaging.version import parse
 
 
-from promidius_versioning_utils.utils.version import bump_version, parse_version, get_version_file_path
+from versioning_utils.utils.version import bump_version, parse_version, get_version_file_path
 
 
 class TestVersionBump(unittest.TestCase):
@@ -13,7 +13,8 @@ class TestVersionBump(unittest.TestCase):
             ('minor', '0.1.0', '0.2.0'),
             ('major', '1.0.0', '2.0.0'),
             ('alpha', '1.0.0a1', '1.0.0a2'),
-            ('dev', '1.0.0.dev1', '1.0.0.dev2')
+            ('dev', '1.0.0.dev1', '1.0.0.dev2'),
+            ('dev','0.0.0','0.0.0.dev1')
         ]
 
         for test_tuple in test_array:

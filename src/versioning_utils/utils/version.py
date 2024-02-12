@@ -45,10 +45,10 @@ def bump_version(v: Version, level: Literal["major", "minor", "patch", "alpha", 
             patch += 1
             alpha, dev = None, None
         case "alpha":
-            alpha = alpha + 1
+            alpha = (alpha or 0) + 1
             dev = None
         case "dev":
-            dev = dev + 1
+            dev = (dev or 0) + 1
 
     version_str = f"{major}.{minor}.{patch}"
     if alpha is not None:
