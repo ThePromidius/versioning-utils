@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "promidius-versioning-utils"
 description = "A simple versioning utility for Python projects."
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="ThePromidius", email="thepromidiusyt@gmail.com" }
 ]
